@@ -29,6 +29,18 @@ const addItem = (todo) => {
         const li = document.createElement('li');
         const button = document.createElement('button');
         const span = document.createElement('span');
+        const p = document.createElement('p');
+
+        p.innerText = '✅';
+        li.appendChild(p);
+        p.addEventListener('click', () => {
+            const cancleLine = span.style.textDecoration;
+            if ( cancleLine === "line-through") {
+                span.style.textDecoration = "none";
+            } else {
+                span.style.textDecoration = "line-through";
+            }
+        })
 
 
         button.innerText = '삭제';
